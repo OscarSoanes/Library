@@ -13,6 +13,7 @@ function addBookToLibrary(book) {
 
 function printBooksToView () {
     const mainGrid = document.getElementById("card-container")
+    mainGrid.innerHTML = ""
     let id = 0;
     for (const key of library) {
         
@@ -59,15 +60,14 @@ form.addEventListener('submit', (e) => {
     const pages = document.getElementById("pages");
     const read = document.getElementById("read");
 
+    addBookToLibrary(new Book(title.value, author.value, pages.value, read.checked));
+    printBooksToView()
+
     // clear data
     title.value = "";
     author.value = "";
     pages.value = "";
     read.checked = false;
-
-
-    addBookToLibrary(new Book(title.value, author.value, pages.value, read.checked));
-    printBooksToView()
 })
 
 
