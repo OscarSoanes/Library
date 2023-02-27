@@ -47,8 +47,6 @@ function printBooksToView () {
     }
 }
 
-const newBook = new Book("name", "author", 182, true);
-addBookToLibrary(newBook);
 printBooksToView()
 
 const form = document.querySelector("form");
@@ -69,8 +67,6 @@ form.addEventListener('submit', (e) => {
     pages.value = "";
     read.checked = false;
 })
-
-
 
 // Manages the card handler and updates the book read value
 // based on the checked value in html
