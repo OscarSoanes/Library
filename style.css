@@ -2,12 +2,59 @@
 
 :root {
     font-family: Nunito, sans-serif;
-    --body: #0d1b2a;
+    --body: #1b263b;
+    --heading: #0d1b2a;
     --text: #e0e1dd;
-    --container: #415a77;
+    --container: #778da9;
+}
+
+html, body {
+    height: 100%;
 }
 
 body {
     background-color: var(--body);
+    color: var(--body);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: minmax(300px, 20%) 1fr;
+    grid-template-rows: min-content 1fr;
+    height: 100%;
+}
+
+header {
+    grid-column: span 2;
+    font-size: 2.5rem;
+    font-weight: 700;
+    padding: 1rem 3rem;
     color: var(--text);
+    background-color: var(--heading);
+}
+
+aside {
+    background-color: var(--container);
+    padding: 1rem;
+}
+
+main {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 300px)
+}
+
+.card {
+    background-color: var(--container);
+    height: 300px;
+    text-align: center;
+}
+
+.card > p:first-of-type {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+}
+
+.card > p {
+    margin: 1rem;
 }
