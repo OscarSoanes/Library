@@ -50,10 +50,27 @@ const newBook = new Book("name", "author", 182, true);
 addBookToLibrary(newBook);
 printBooksToView()
 
+const form = document.querySelector("form");
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const title = document.getElementById("title");
+    const author = document.getElementById("author");
+    const pages = document.getElementById("pages");
+    const read = document.getElementById("read");
+
+    addBookToLibrary(new Book(title.value, author.value, pages.value, read.checked));
+    printBooksToView()
+})
+
+
+
+// Manages the card handler and updates the book read value
+// based on the checked value in html
 const allBookSliders = document.querySelectorAll(".read-selector")
 
 allBookSliders.forEach(slider => slider.addEventListener('click', () => {
     let bookId = slider.getAttribute("lib_id")
     let book = library[bookId]
     book.read = slider.checked
-}))
+}));
