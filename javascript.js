@@ -13,7 +13,9 @@ function addBookToLibrary(book) {
 
 function printBooksToView () {
     const mainGrid = document.getElementById("card-container")
+    let id = 0;
     for (const key of library) {
+        
         const card = document.createElement("div");
         card.classList.add("card")
 
@@ -30,16 +32,17 @@ function printBooksToView () {
         label.classList.add("switch")
         const check = document.createElement("input");
         check.type = "checkbox";
-        check.name = "read";
-        check.id = "read";
+        check.name = "book-read";
+        check.classList.add("read-selector")
         check.checked = key.read;
-        
+        check.setAttribute("lib_id", id)
         const slider = document.createElement("span");
         slider.classList.add("slider")
         
         label.append(check, slider);
         card.append(title, author, pages, label)
         mainGrid.appendChild(card)
+        id++;
     }
 }
 
