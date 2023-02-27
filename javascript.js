@@ -59,6 +59,13 @@ form.addEventListener('submit', (e) => {
     const pages = document.getElementById("pages");
     const read = document.getElementById("read");
 
+    // clear data
+    title.value = "";
+    author.value = "";
+    pages.value = "";
+    read.checked = false;
+
+
     addBookToLibrary(new Book(title.value, author.value, pages.value, read.checked));
     printBooksToView()
 })
