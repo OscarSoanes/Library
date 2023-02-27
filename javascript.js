@@ -49,3 +49,11 @@ function printBooksToView () {
 const newBook = new Book("name", "author", 182, true);
 addBookToLibrary(newBook);
 printBooksToView()
+
+const allBookSliders = document.querySelectorAll(".read-selector")
+
+allBookSliders.forEach(slider => slider.addEventListener('click', () => {
+    let bookId = slider.getAttribute("lib_id")
+    let book = library[bookId]
+    book.read = slider.checked
+}))
